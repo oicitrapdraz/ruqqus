@@ -213,7 +213,7 @@ def no_cors(f):
 
         origin = request.headers.get("Origin",None)
 
-        if origin and origin != "https://"+app.config["SERVER_NAME"]:
+        if origin and origin != "https://"+app.config["SERVER_NAME"] and not origin.startswith("http://ruqqus.localhost"):
 
             return "This page may not be embedded in other webpages.", 403
 
