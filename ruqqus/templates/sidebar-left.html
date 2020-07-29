@@ -29,7 +29,7 @@
               </a>
             </li>
             <li class="guild-recommendations-item">
-              <a href="/all?sort=new">
+              <a href="/all?sort={{ request.args.get('sort') or 'new' }}">
                 <div class="d-flex">
                   <div>
                     <img src="/assets/images/icons/planet.png" class="profile-pic profile-pic-30"></div>
@@ -59,7 +59,7 @@
                   </a>
                 </li>
                 <li class="guild-recommendations-item">
-                  <a href="/all?sort=new">
+                  <a href="/all?sort={{ request.args.get('sort') or 'new' }}">
                     <img src="/assets/images/icons/planet.png" class="profile-pic profile-pic-30 transition-square">
                   </a>
                 </li>
