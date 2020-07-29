@@ -87,12 +87,14 @@ Start services
 
 `$ brew services start postgresql`
 
-`$ psql postgres -a -f schema.txt`
+`$ createdb ruqqus`
+
+`$ psql ruqqus -a -f schema.txt`
 
 
 Add test user to database (password = password)
 
-`$ psql postgres`
+`$ psql ruqqus`
 
 ```
 INSERT INTO users (id, username, email, passhash, created_utc, creation_ip, tos_agreed_utc, login_nonce)
@@ -115,9 +117,11 @@ Create environment variables
 
 `$ export domain=ruqqus.localhost:8000`
 
+`$ export SESSION_COOKIE_SECURE=false`
+
 `$ export REDIS_URL=redis://localhost:6379`
 
-`$ export DATABASE_URL=postgres://localhost:5432/postgres`
+`$ export DATABASE_URL=postgres://localhost:5432/ruqqus`
 
 `$ export PYTHONPATH=$(/path/to/ruqqus/root)`
 
@@ -131,4 +135,3 @@ Run Ruqqus
 
 ## License
 [MPL-2.0](https://github.com/ruqqus/ruqqus/blob/master/LICENSE)
-
